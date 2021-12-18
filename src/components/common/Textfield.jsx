@@ -8,7 +8,7 @@ const Textfield = (props) => {
     input = {}
   } = props;
   return (
-    <div>
+    <div className="mb-2">
       <label className="d-block text-uppercase h6">{props.label}</label>
       <Form.Control type="text" {...props} {...input} />
     </div>
