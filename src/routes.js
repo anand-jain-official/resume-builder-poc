@@ -1,16 +1,16 @@
 import React, { Suspense, lazy } from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
-const Home = lazy(() => import('./routes/Home'));
-const About = lazy(() => import('./routes/About'));
+const Home = lazy(() => import('./pages/Home.jsx'));
 
-const App = () => (
+const RoutesComponent = () => (
   <Router>
     <Suspense fallback={<div>Loading...</div>}>
-      <Switch>
-        <Route exact path="/" component={Home}/>
-        <Route path="/about" component={About}/>
-      </Switch>
+      <Routes>
+        <Route path="/" element={<Home />}/>
+      </Routes>
     </Suspense>
   </Router>
 );
+
+export default RoutesComponent;
