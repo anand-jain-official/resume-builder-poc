@@ -15,7 +15,7 @@ const SimpleForm = props => {
   return (
     <form onSubmit={handleSubmit}>
       <Row>
-        <Col xs = {12} lg = {6}>
+        <Col xs = {12} xl = {6}>
           <Field
             name="firstName"
             component={Textfield}
@@ -24,13 +24,24 @@ const SimpleForm = props => {
             label="First Name"
           />
         </Col>
-        <Col xs = {12} lg = {6}>
+        <Col xs = {12} xl = {6}>
           <Field
             name="lastName"
             component={Textfield}
             type="text"
             placeholder="Last Name"
             label="Last Name"
+          />
+        </Col>
+      </Row>
+      <Row>
+        <Col xs = {12}>
+          <Field
+            name="designation"
+            component={Textfield}
+            type="text"
+            placeholder="Designation"
+            label="Designation"
           />
         </Col>
       </Row>
@@ -102,11 +113,13 @@ const SimpleForm = props => {
       </Row>
       <Row>
         <Col xs = {12} className = "text-end p-3">
-          <Button variant="danger" disabled={pristine || submitting} onClick={reset}>
-            Clear Values
+          <Button variant="danger" disabled={pristine || submitting} onClick={reset} className="mt-2">
+            <i className="fa fa-times me-2" aria-hidden="true"></i>
+            Reset
           </Button>
-          <Button variant="success" disabled={pristine || submitting} className="ms-3">
-            Submit
+          <Button variant="success" disabled={pristine || submitting} className="ms-3 mt-2">
+            <i className="fa fa-print me-2" aria-hidden="true" />
+            Preview
           </Button>
         </Col>
       </Row>
@@ -115,5 +128,5 @@ const SimpleForm = props => {
 }
 
 export default reduxForm({
-  form: 'simple' // a unique identifier for this form
+  form: 'resumeForm' // a unique identifier for this form
 })(SimpleForm)

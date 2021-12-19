@@ -13,14 +13,104 @@
 
 .resume-bg {
   background-color: #2C2C2C;
+  min-height: 100vh;
 }
 
 .stripe-left {
-  background-color: red;
   margin-left: calc(-1.5rem * 0.5);
-  width: 95%;
+  margin-right: 0;
 }
 
 .height-100 {
   height: 100%;
+}
+
+.red-theme .theme-bg {
+  background-color: #F22B29;
+}
+
+.red-theme .theme-bg-dark {
+  background-color: #D4100C;
+}
+
+.green-theme .theme-bg {
+  background-color: #429789;
+}
+
+.green-theme .theme-bg-dark {
+  background-color: #347868;
+}
+
+.yellow-theme .theme-bg {
+  background-color: #F49D37;
+}
+
+.yellow-theme .theme-bg-dark {
+  background-color: #D5770B;
+}
+
+.blue-theme .theme-bg {
+  background-color: #3F88C5;
+}
+
+.blue-theme .theme-bg-dark {
+  background-color: #2F6C9D;
+}
+
+.preview-templates h4,
+.preview-templates h5,
+.preview-templates h6 {
+  font-size: 0.5rem !important;
+}
+
+.preview-templates p {
+  font-size: 0.4rem !important;
+}
+
+.preview-templates span {
+  font-size: 0.3rem !important;
+}
+
+.theme-preview:hover {
+  cursor: pointer;
+}
+
+.theme-preview .useBtn {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  visibility: hidden;
+  width: fit-content;
+}
+
+.theme-preview:hover .useBtn {
+  visibility: visible;
+}
+
+@media (max-width: 991px) {
+  .form-bg {
+    height: 100%;
+  }
+  h4,h5,h6 {
+    font-size: 2vw !important;
+  }
+  p {
+    font-size: 1.5vw !important;
+  }
+  span {
+    font-size: 1vw !important;
+  }
+}
+
+@media (max-width: 600px) {
+  h4,h5,h6 {
+    font-size: 3vw !important;
+  }
+  p {
+    font-size: 2vw !important;
+  }
+  span {
+    font-size: 1.5vw !important;
+  }
 }

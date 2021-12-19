@@ -56,7 +56,10 @@ const Experience = ({ fields }) => {
         </div>
       )}
       <div className="d-flex justify-content-center mb-2">
-        <Button variant="success" onClick={() => fields.push({})}>More</Button>
+        <Button variant="success" onClick={() => fields.push({})}>
+          <i className="fa fa-plus me-2" aria-hidden="true"></i>
+          More
+        </Button>
       </div>
     </div>
   )

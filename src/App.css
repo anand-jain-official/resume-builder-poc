@@ -142,10 +142,22 @@
   box-shadow: none !important;
 }
 
+.resume {
+  aspect-ratio: 1/1;
+}
+
 .text-field-label {
   color: white;
 }
 
 * {
+  color: white;
+}
+
+.bg-white * {
+  color: #212121;
+}
+
+.stripe-left * {
   color: white;
 }
