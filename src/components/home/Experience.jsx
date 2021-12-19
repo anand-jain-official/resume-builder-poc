@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { Row, Col } from 'react-bootstrap';
+import { Row, Col, Button } from 'react-bootstrap';
 import { Field } from 'redux-form';
 import Textfield from '../common/Textfield';
 
@@ -12,15 +12,14 @@ const Experience = ({ fields }) => {
   return (
     <div>
       {fields.map((experience, index) =>
-        <div key={index} className="border p-3 mb-3">
+        <div key={index} className="p-3">
           <div className="d-flex justify-content-between">
             <h6>#{index + 1}</h6>
-            <button
-              type="button"
-              title="Remove Member"
+            <Button
+              variant = "danger"
               onClick={() => fields.remove(index)}>
                 <i class="fa fa-remove" />
-            </button>
+            </Button>
           </div>
           <Field
             name={`${experience}.company`}
@@ -53,8 +52,8 @@ const Experience = ({ fields }) => {
             label="Designation"/>
         </div>
       )}
-      <div className="d-flex justify-content-center mt-2 mb-2">
-        <button type="button" onClick={() => fields.push({})}>More</button>
+      <div className="d-flex justify-content-center mb-2">
+        <Button variant="success" onClick={() => fields.push({})}>More</Button>
       </div>
     </div>
   )

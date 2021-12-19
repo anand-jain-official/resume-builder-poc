@@ -1,0 +1,12 @@
+.form-bg {
+  background-color: #212121;
+  height: 100vh;
+  overflow-y: auto;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none;  /* Internet Explorer 10+ */
+}
+
+.form-bg::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}

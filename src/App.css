@@ -76,6 +76,7 @@
   /* match the font styles */
   font-size: inherit;
   line-height: inherit;
+  background-color: inherit;
 }
 
 .react-tags__search input::-ms-clear {
@@ -89,6 +90,10 @@
   width: 100%;
 }
 
+.react-tags__selected-tag-name {
+  color: #212121;
+}
+
 @media screen and (min-width: 30em) {
   .react-tags__suggestions {
     width: 240px;
@@ -99,7 +104,7 @@
   margin: 4px -1px;
   padding: 0;
   list-style: none;
-  background: white;
+  background:#424242;
   border: 1px solid #d1d1d1;
   border-radius: 2px;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
@@ -128,4 +133,19 @@
 .react-tags__suggestions li.is-disabled {
   opacity: 0.5;
   cursor: auto;
+}
+
+.text-field {
+  background-color: #424242 !important;
+  color: white !important;
+  border: 0 !important;
+  box-shadow: none !important;
+}
+
+.text-field-label {
+  color: white;
+}
+
+* {
+  color: white;
 }

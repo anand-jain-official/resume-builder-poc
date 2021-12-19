@@ -2,7 +2,8 @@ import React from 'react'
 import { Field, reduxForm, FieldArray } from 'redux-form';
 import {
   Row,
-  Col
+  Col,
+  Button
 } from 'react-bootstrap';
 import Textfield from '../common/Textfield';
 import Education from './Education';
@@ -66,32 +67,37 @@ const SimpleForm = props => {
           />
         </Col>
       </Row>
+      <hr />
       <Row>
         <Col xs = {12}>
           <h5>Education</h5>
           <FieldArray name="education" component={Education}/>
         </Col>
       </Row>
+      <hr />
       <Row>
         <Col xs = {12}>
           <h5>Experience</h5>
           <FieldArray name="experience" component={Experience}/>
         </Col>
       </Row>
+      <hr />
       <Row>
         <Col xs = {12}>
           <h5>Skills</h5>
           <Skills />
         </Col>
       </Row>
-      <div>
-        <button type="submit" disabled={pristine || submitting}>
-          Submit
-        </button>
-        <button type="button" disabled={pristine || submitting} onClick={reset}>
-          Clear Values
-        </button>
-      </div>
+      <Row>
+        <Col xs = {12} className = "text-right p-3">
+          <Button variant="danger" disabled={pristine || submitting} onClick={reset}>
+            Clear Values
+          </Button>
+          <Button variant="success" disabled={pristine || submitting} className="ms-3">
+            Submit
+          </Button>
+        </Col>
+      </Row>
     </form>
   )
 }
