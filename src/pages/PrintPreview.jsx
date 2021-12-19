@@ -24,11 +24,11 @@ function PrintPreview(props) {
       <Row>
         <Col xs = {12} className = "resume-bg p-5">
           <div className="width-100 text-center pb-3">
-            <Button variant="danger" className="mx-2" onClick = {() => navigate("/home")}>
+            <Button variant="danger" className="m-2" onClick = {() => navigate("/home")}>
               <i className = "fa fa-pencil-square-o me-2" aria-hidden="true" />
               Continue Editing
             </Button>
-            <Button variant="success" className="mx-2" onClick = {handlePrint}>
+            <Button variant="success" className="m-2" onClick = {handlePrint}>
               <i className = "fa fa-print me-2" aria-hidden="true" />
               Print
             </Button>
