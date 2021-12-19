@@ -6,12 +6,12 @@ import {
 } from "react-bootstrap";
 import { useSelector } from 'react-redux';
 
-const Resume = props => {
+const Resume = (props, ref) => {
   const form = useSelector(store => store.form.resumeForm);
   const values = form && form.values? form.values : {};
   const fullName = values.firstName ? `${values.firstName} ${values.lastName ? values.lastName : ""}` : "Anand Jain";
   return (
-    <Row className = {`height-100 resume ${props.theme}-theme`}>
+    <Row className = {`height-100 resume ${props.theme}-theme`} ref = {ref}>
       <Col xs={4} className="theme-bg pt-3 pb-3 pe-4">
         <h4 className="mb-0">{fullName}</h4>
         <p>Full Stack Developer</p>
@@ -84,4 +84,4 @@ const Resume = props => {
   )
 }
 
-export default Resume;
+export default React.forwardRef(Resume);

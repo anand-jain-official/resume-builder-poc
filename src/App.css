@@ -143,7 +143,7 @@
 }
 
 .resume {
-  aspect-ratio: 1/1;
+  max-width: 700px;
 }
 
 .text-field-label {
@@ -160,4 +160,26 @@
 
 .stripe-left * {
   color: white;
+}
+
+.width-100 {
+  width: 100%;
+}
+
+@media print {
+  .theme-bg {
+    padding-left: 1.5rem !important;
+  }
+  .theme-bg p {
+    font-size: 1.2rem !important;
+  }
+  .theme-bg h6 {
+    font-size: 1.2rem !important;
+  }
+  .stripe-left * {
+    font-size: 1.5rem !important;
+  }
+  .resume {
+    max-width: unset !important;
+  }
 }

@@ -9,10 +9,10 @@ const RoutesComponent = () => (
     <Suspense fallback={<div>Loading...</div>}>
       <Routes>
         <Route path="/print-preview" element={<PrintPreview />}/>
-        <Route path="/" element={<Home />}/>
+        <Route path="/home" element={<Home />}/>
         <Route
           path="*"
-          element={<Navigate to="/" />}
+          element={<Navigate to="/home" />}
         />
       </Routes>
     </Suspense>

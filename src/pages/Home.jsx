@@ -23,7 +23,7 @@ function Home(props) {
           <h3>Profile</h3>
           <Form />
         </Col>
-        <Col xs = {12} lg = {7} xl = {6} className = "resume-bg p-5">
+        <Col xs = {12} lg = {7} xl = {6} className = "resume-bg p-5 d-flex justify-content-center">
           <Resume theme = {selectedTheme} />
         </Col>
         <Col xs = {12} lg = {2} xl = {3} className = "form-bg p-5 preview-templates">

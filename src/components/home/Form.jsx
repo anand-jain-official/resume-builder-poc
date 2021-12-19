@@ -9,9 +9,11 @@ import Textfield from '../common/Textfield';
 import Education from './Education';
 import Experience from './Experience';
 import Skills from './Skills';
+import { useNavigate } from 'react-router-dom';
 
 const SimpleForm = props => {
   const { handleSubmit, pristine, reset, submitting } = props;
+  const navigate = useNavigate();
   return (
     <form onSubmit={handleSubmit}>
       <Row>
@@ -113,11 +115,11 @@ const SimpleForm = props => {
       </Row>
       <Row>
         <Col xs = {12} className = "text-end p-3">
-          <Button variant="danger" disabled={pristine || submitting} onClick={reset} className="mt-2">
+          <Button variant="danger" onClick={reset} className="mt-2">
             <i className="fa fa-times me-2" aria-hidden="true"></i>
             Reset
           </Button>
-          <Button variant="success" disabled={pristine || submitting} className="ms-3 mt-2">
+          <Button variant="success" onClick = {() => navigate('/print-preview')} className="ms-3 mt-2">
             <i className="fa fa-print me-2" aria-hidden="true" />
             Preview
           </Button>
