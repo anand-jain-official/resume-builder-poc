@@ -1,8 +1,7 @@
 import React from 'react';
 import {
   Row,
-  Col,
-  Badge
+  Col
 } from "react-bootstrap";
 import { useSelector } from 'react-redux';
 

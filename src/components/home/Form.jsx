@@ -12,7 +12,7 @@ import Skills from './Skills';
 import { useNavigate } from 'react-router-dom';
 
 const SimpleForm = props => {
-  const { handleSubmit, pristine, reset, submitting } = props;
+  const { handleSubmit, reset } = props;
   const navigate = useNavigate();
   return (
     <form onSubmit={handleSubmit}>

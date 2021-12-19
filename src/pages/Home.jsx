@@ -1,6 +1,6 @@
 import "./css/home.css";
 
-import React, { useState } from 'react';
+import React from 'react';
 import { 
   Container,
   Row,
