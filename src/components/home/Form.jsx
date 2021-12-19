@@ -130,5 +130,6 @@ const SimpleForm = props => {
 }
 
 export default reduxForm({
-  form: 'resumeForm' // a unique identifier for this form
+  form: 'resumeForm',
+  destroyOnUnmount: false
 })(SimpleForm)

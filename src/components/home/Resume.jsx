@@ -13,7 +13,7 @@ const Resume = (props, ref) => {
     <Row className = {`height-100 resume ${props.theme}-theme`} ref = {ref}>
       <Col xs={4} className="theme-bg pt-3 pb-3 pe-4">
         <h4 className="mb-0">{fullName}</h4>
-        <p>Full Stack Developer</p>
+        <p>{values.designation || "Full Stack Developer"}</p>
         <div className="stripe-left theme-bg-dark p-1 mb-3">
           <h6 className="text-uppercase mb-0 ps-2">Profile</h6>
         </div>
