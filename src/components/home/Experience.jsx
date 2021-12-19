@@ -15,11 +15,14 @@ const Experience = ({ fields }) => {
         <div key={index} className="p-3">
           <div className="d-flex justify-content-between">
             <h6>#{index + 1}</h6>
-            <Button
-              variant = "danger"
-              onClick={() => fields.remove(index)}>
-                <i class="fa fa-remove" />
-            </Button>
+            {index !== 0 ?
+              <Button
+                variant = "danger"
+                onClick={() => fields.remove(index)}>
+                  <i class="fa fa-remove" />
+              </Button> 
+              : null
+            }
           </div>
           <Field
             name={`${experience}.company`}

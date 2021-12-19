@@ -67,6 +67,18 @@ const SimpleForm = props => {
           />
         </Col>
       </Row>
+      <Row>
+        <Col xs = {12}>
+          <Field
+            name="objective"
+            as = "textarea"
+            component={Textfield}
+            type="text"
+            placeholder="Objective"
+            label="Objective"
+          />
+        </Col>
+      </Row>
       <hr />
       <Row>
         <Col xs = {12}>
@@ -89,7 +101,7 @@ const SimpleForm = props => {
         </Col>
       </Row>
       <Row>
-        <Col xs = {12} className = "text-right p-3">
+        <Col xs = {12} className = "text-end p-3">
           <Button variant="danger" disabled={pristine || submitting} onClick={reset}>
             Clear Values
           </Button>

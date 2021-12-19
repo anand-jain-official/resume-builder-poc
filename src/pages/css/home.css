@@ -10,3 +10,17 @@
   width: 0;
   height: 0;
 }
+
+.resume-bg {
+  background-color: #2C2C2C;
+}
+
+.stripe-left {
+  background-color: red;
+  margin-left: calc(-1.5rem * 0.5);
+  width: 95%;
+}
+
+.height-100 {
+  height: 100%;
+}
