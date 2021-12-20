@@ -2,6 +2,7 @@
   background-color: #212121;
   height: 100vh;
   overflow-y: auto;
+  overflow-x: visible;
   scrollbar-width: none; /* Firefox */
   -ms-overflow-style: none;  /* Internet Explorer 10+ */
 }
@@ -97,25 +98,32 @@
     height: 100%;
     overflow-y: visible;
   }
-  h4,h5,h6 {
+  .resume h4,
+  .resume h5,
+  .resume h6 {
     font-size: 2vw;
   }
-  p {
+  .resume p {
     font-size: 1.5vw;
   }
-  span {
+  .resume span {
     font-size: 1vw;
   }
 }
 
 @media (max-width: 600px) {
-  h4,h5,h6 {
+  .resume h4,
+  .resume h5,
+  .resume h6 {
     font-size: 3vw;
   }
-  p {
+  .resume p {
     font-size: 2vw;
   }
-  span {
+  .resume span {
+    font-size: 1.5vw;
+  }
+  .resume span {
     font-size: 1.5vw;
   }
 }

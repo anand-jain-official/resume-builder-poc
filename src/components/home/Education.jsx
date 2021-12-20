@@ -12,52 +12,52 @@ const Education = ({ fields }) => {
   return (
     <div>
       {fields.map((education, index) =>
-        <div key={index} className="p-3">
-          <div className="d-flex justify-content-between">
+        <div key = {index} className = "p-3">
+          <div className = "d-flex justify-content-between">
             <h6>#{index + 1}</h6>
             {index !== 0 ?
               <Button
                 variant = "danger"
-                onClick={() => fields.remove(index)}>
-                  <i class="fa fa-remove" />
+                onClick = {() => fields.remove(index)}>
+                  <i class = "fa fa-remove" />
               </Button> 
               : null
             }
           </div>
           <Field
-            name={`${education}.institute`}
-            type="text"
-            component={Textfield}
-            label="Institute"/>
+            name = {`${education}.institute`}
+            type = "text"
+            component = {Textfield}
+            label = "Institute"/>
           <Row>
             <Col xs = {12} lg = {5}>
               <Field
-              name={`${education}.fromYear`}
-              type="number"
-              component={Textfield}
-              label="From Year"/>
+              name = {`${education}.fromYear`}
+              type = "number"
+              component = {Textfield}
+              label = "From Year"/>
             </Col>
-            <Col xs = {12} lg = {2} className="d-flex justify-content-center align-items-center">
+            <Col xs = {12} lg = {2} className = "d-flex justify-content-center align-items-center">
               <span> - </span>
             </Col>
             <Col xs = {12} lg = {5}>
               <Field
-                name={`${education}.toYear`}
-                type="number"
-                component={Textfield}
-                label="To Year"/>
+                name = {`${education}.toYear`}
+                type = "number"
+                component = {Textfield}
+                label = "To Year"/>
             </Col>
           </Row>
           <Field
-            name={`${education}.degree`}
-            type="text"
-            component={Textfield}
-            label="Degree"/>
+            name = {`${education}.degree`}
+            type = "text"
+            component = {Textfield}
+            label = "Degree"/>
         </div>
       )}
-      <div className="d-flex justify-content-center mb-2">
-        <Button variant="success" onClick={() => fields.push({})}>
-          <i className="fa fa-plus me-2" aria-hidden="true"></i>
+      <div className = "d-flex justify-content-center mb-2">
+        <Button variant = "success" onClick = {() => fields.push({})}>
+          <i className = "fa fa-plus me-2" aria-hidden = "true"></i>
           More
         </Button>
       </div>

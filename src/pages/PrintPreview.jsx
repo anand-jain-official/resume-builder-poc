@@ -23,17 +23,17 @@ function PrintPreview(props) {
     <Container fluid>
       <Row>
         <Col xs = {12} className = "resume-bg p-5">
-          <div className="width-100 text-center pb-3">
-            <Button variant="danger" className="m-2" onClick = {() => navigate("/home")}>
-              <i className = "fa fa-pencil-square-o me-2" aria-hidden="true" />
+          <div className = "width-100 text-center pb-3">
+            <Button variant = "danger" className = "m-2" onClick = {() => navigate("/home")}>
+              <i className = "fa fa-pencil-square-o me-2" aria-hidden = "true" />
               Continue Editing
             </Button>
-            <Button variant="success" className="m-2" onClick = {handlePrint}>
-              <i className = "fa fa-print me-2" aria-hidden="true" />
+            <Button variant = "success" className = "m-2" onClick = {handlePrint}>
+              <i className = "fa fa-print me-2" aria-hidden = "true" />
               Print
             </Button>
           </div>
-          <div className="d-flex justify-content-center height-80vh">
+          <div className = "d-flex justify-content-center height-80vh">
             <Resume ref = {componentRef} theme = {selectedTheme} />
           </div>
         </Col>

@@ -14,81 +14,84 @@ import { useNavigate } from 'react-router-dom';
 const SimpleForm = props => {
   const { handleSubmit, reset } = props;
   const navigate = useNavigate();
+  const onSubmit = () => {
+    navigate('/print-preview');
+  }
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit = {handleSubmit(onSubmit)}>
       <Row>
         <Col xs = {12} xl = {6}>
           <Field
-            name="firstName"
-            component={Textfield}
-            type="text"
-            placeholder="First Name"
-            label="First Name"
+            name = "firstName"
+            component = {Textfield}
+            type = "text"
+            placeholder = "e.g. John"
+            label = "First Name"
           />
         </Col>
         <Col xs = {12} xl = {6}>
           <Field
-            name="lastName"
-            component={Textfield}
-            type="text"
-            placeholder="Last Name"
-            label="Last Name"
+            name = "lastName"
+            component = {Textfield}
+            type = "text"
+            placeholder = "e.g. Doe"
+            label = "Last Name"
           />
         </Col>
       </Row>
       <Row>
         <Col xs = {12}>
           <Field
-            name="designation"
-            component={Textfield}
-            type="text"
-            placeholder="Designation"
-            label="Designation"
+            name = "designation"
+            component = {Textfield}
+            type = "text"
+            placeholder = "e.g. Software Developer"
+            label = "Designation"
           />
         </Col>
       </Row>
       <Row>
         <Col xs = {12}>
           <Field
-            name="email"
-            component={Textfield}
-            type="email"
-            placeholder="Email"
-            label="Email"
+            name = "email"
+            component = {Textfield}
+            type = "email"
+            placeholder = "e.g. test@example.com"
+            label = "Email"
           />
         </Col>
       </Row>
       <Row>
         <Col xs = {12}>
           <Field
-            name="address"
-            component={Textfield}
-            type="text"
-            placeholder="Address"
-            label="Address"
+            name = "address"
+            component = {Textfield}
+            type = "text"
+            placeholder = "e.g. h1, street, city, state..."
+            label = "Address"
           />
         </Col>
       </Row>
       <Row>
         <Col xs = {12}>
           <Field
-            name="phone"
-            component={Textfield}
-            type="tel"
-            placeholder="Phone"
-            label="Phone"
+            name = "phone"
+            component = {Textfield}
+            type = "tel"
+            placeholder = "e.g. 91 9876543210"
+            label = "Phone"
           />
         </Col>
       </Row>
       <Row>
         <Col xs = {12}>
           <Field
-            name="objective"
+            name = "objective"
             as = "textarea"
-            component={Textfield}
-            type="text"
-            placeholder="Objective"
-            label="Objective"
+            component = {Textfield}
+            type = "text"
+            placeholder = ""
+            label = "Objective"
           />
         </Col>
       </Row>
@@ -96,14 +99,14 @@ const SimpleForm = props => {
       <Row>
         <Col xs = {12}>
           <h5>Education</h5>
-          <FieldArray name="education" component={Education}/>
+          <FieldArray name = "education" component = {Education}/>
         </Col>
       </Row>
       <hr />
       <Row>
         <Col xs = {12}>
           <h5>Experience</h5>
-          <FieldArray name="experience" component={Experience}/>
+          <FieldArray name = "experience" component = {Experience}/>
         </Col>
       </Row>
       <hr />
@@ -115,12 +118,12 @@ const SimpleForm = props => {
       </Row>
       <Row>
         <Col xs = {12} className = "text-end p-3">
-          <Button variant="danger" onClick={reset} className="mt-2">
-            <i className="fa fa-times me-2" aria-hidden="true"></i>
+          <Button variant = "danger" onClick = {reset} className = "mt-2">
+            <i className = "fa fa-times me-2" aria-hidden = "true"></i>
             Reset
           </Button>
-          <Button variant="success" onClick = {() => navigate('/print-preview')} className="ms-3 mt-2">
-            <i className="fa fa-print me-2" aria-hidden="true" />
+          <Button variant = "success" type = "submit" className = "ms-3 mt-2">
+            <i className = "fa fa-print me-2" aria-hidden = "true" />
             Preview
           </Button>
         </Col>

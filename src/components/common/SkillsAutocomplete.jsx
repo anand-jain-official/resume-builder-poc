@@ -26,10 +26,10 @@ const SkillsAutocomplete = ({ input: { value, onChange } }) => {
   return (
     <ReactTags
       ref = {skillsTagsRef}
-      tags={Array.isArray(value) ? value : []}
-      suggestions={suggestions}
-      onDelete={onDelete}
-      onAddition={onAddition}
+      tags = {Array.isArray(value) ? value : []}
+      suggestions = {suggestions}
+      onDelete = {onDelete}
+      onAddition = {onAddition}
       placeholderText = {""}
       classNames = {{ root : "form-control text-field react-tags" }}
     />

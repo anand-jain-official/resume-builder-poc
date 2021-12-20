@@ -1,3 +1,6 @@
+
+/* REACT TAGS STYLES START */
+
 .react-tags {
   position: relative;
   padding: 6px 0 0 6px;
@@ -93,15 +96,9 @@
   color: #212121;
 }
 
-@media screen and (max-width: 30em) {
+@media screen and (max-width: 1200px) {
   .react-tags * {
-    font-size: 1rem !important;
-  }
-}
-
-@media screen and (min-width: 30em) {
-  .react-tags__suggestions {
-    width: 240px;
+    font-size: 0.875rem !important;
   }
 }
 
@@ -140,6 +137,10 @@
   cursor: auto;
 }
 
+/* REACT TAGS STYLES END */
+
+/* REACT COMMON STYLES START */
+
 .text-field {
   background-color: #424242 !important;
   color: white !important;
@@ -148,7 +149,34 @@
 }
 
 .resume {
+  width: 80%;
   max-width: 700px;
+  flex-wrap: nowrap !important;
+}
+
+.theme-preview .resume {
+  height: 25vh;
+  max-width: 20vh;
+}
+
+@media (max-width: 1200px) {
+  .resume {
+    width: 100%;
+    max-width: 700px;
+    flex-wrap: nowrap !important;
+  }
+  .theme-preview .resume {
+    height: 30vh;
+    max-width: 20vh;
+  }
+}
+
+.theme-preview .resume h4, 
+.theme-preview .resume h5,
+.theme-preview .resume h6,
+.theme-preview .resume p,
+.theme-preview .resume span {
+  display: none;
 }
 
 .text-field-label {
@@ -171,6 +199,10 @@
   width: 100%;
 }
 
+p {
+  overflow-wrap: break-word;
+}
+
 @media print {
   .theme-bg {
     padding-left: 1.5rem !important;
@@ -188,3 +220,5 @@
     max-width: unset !important;
   }
 }
+
+/* REACT COMMON STYLES END */

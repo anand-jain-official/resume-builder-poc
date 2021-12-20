@@ -1,7 +1,7 @@
 import { SELECT_THEME } from "../types/Home";
 
 const initState = {
-  theme : "green"
+  theme : sessionStorage.getItem("theme") || "green"
 }
 
 const HomeReducer = (state = initState,action) =>{
