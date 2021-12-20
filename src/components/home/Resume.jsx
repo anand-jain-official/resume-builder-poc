@@ -75,8 +75,8 @@ const Resume = (props, ref) => {
         <div className="stripe-left theme-bg-dark p-1 mb-3 mt-3">
           <h6 className="text-uppercase mb-0 ps-2">Skills</h6>
         </div>
-        <div className="d-flex">
-          {values.skills ? values.skills.map(skill => <span className = "badge text-light theme-bg">{skill.name}</span>) : null}
+        <div className="d-flex flex-wrap">
+          {values.skills ? values.skills.map(skill => <span className = "badge text-light theme-bg m-2">{skill.name}</span>) : null}
         </div>
       </Col>
     </Row>

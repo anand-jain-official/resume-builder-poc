@@ -4,11 +4,14 @@ import SkillsAutocomplete from '../common/SkillsAutocomplete';
 
 const Skills = ({ fields }) => {
   return (
-    <Field
-      name={`skills`}
-      type="text"
-      component={SkillsAutocomplete}
-      label="Skill"/>
+    <div className="position-relative">
+      <Field
+        name={`skills`}
+        type="text"
+        component={SkillsAutocomplete}
+        label="Skill"
+      />
+    </div>
   )
 }
 

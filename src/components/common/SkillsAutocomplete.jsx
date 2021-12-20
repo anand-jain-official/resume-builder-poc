@@ -31,7 +31,7 @@ const SkillsAutocomplete = ({ input: { value, onChange } }) => {
       onDelete={onDelete}
       onAddition={onAddition}
       placeholderText = {""}
-      classNames = {{ root : "form-control text-field" }}
+      classNames = {{ root : "form-control text-field react-tags" }}
     />
   );
 };

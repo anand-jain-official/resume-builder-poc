@@ -87,11 +87,16 @@
   position: absolute;
   top: 100%;
   left: 0;
-  width: 100%;
 }
 
 .react-tags__selected-tag-name {
   color: #212121;
+}
+
+@media screen and (max-width: 30em) {
+  .react-tags * {
+    font-size: 1rem !important;
+  }
 }
 
 @media screen and (min-width: 30em) {

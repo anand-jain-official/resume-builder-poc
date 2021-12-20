@@ -95,26 +95,27 @@
 @media (max-width: 991px) {
   .form-bg {
     height: 100%;
+    overflow-y: visible;
   }
   h4,h5,h6 {
-    font-size: 2vw !important;
+    font-size: 2vw;
   }
   p {
-    font-size: 1.5vw !important;
+    font-size: 1.5vw;
   }
   span {
-    font-size: 1vw !important;
+    font-size: 1vw;
   }
 }
 
 @media (max-width: 600px) {
   h4,h5,h6 {
-    font-size: 3vw !important;
+    font-size: 3vw;
   }
   p {
-    font-size: 2vw !important;
+    font-size: 2vw;
   }
   span {
-    font-size: 1.5vw !important;
+    font-size: 1.5vw;
   }
 }
