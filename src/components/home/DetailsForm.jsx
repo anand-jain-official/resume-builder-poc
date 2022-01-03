@@ -11,7 +11,6 @@ import Education from './Education';
 import Experience from './Experience';
 import Skills from './Skills';
 import { useNavigate } from 'react-router-dom';
-import { useSelector, shallowEqual } from 'react-redux';
 
 export const required = value => (value ? undefined : 'Required');
 export const number = value => value && isNaN(Number(value)) ? 'Must be a number' : undefined;
@@ -43,6 +42,7 @@ const SimpleForm = props => {
       const initialValues = JSON.parse(jsonInitialValues);
       props.initialize(initialValues);
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const onSubmit = (values) => {
