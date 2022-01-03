@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { Row, Col, Button } from 'react-bootstrap';
 import { Field } from 'redux-form';
 import Textfield from '../common/Textfield';
+import { alphaNumeric, number, required } from './DetailsForm';
 
 const Education = ({ fields }) => {
   useEffect(() => {
@@ -28,6 +29,7 @@ const Education = ({ fields }) => {
             name = {`${education}.institute`}
             type = "text"
             component = {Textfield}
+            validate={[required, alphaNumeric]}
             label = "Institute"/>
           <Row>
             <Col xs = {12} lg = {5}>
@@ -35,6 +37,7 @@ const Education = ({ fields }) => {
               name = {`${education}.fromYear`}
               type = "number"
               component = {Textfield}
+              validate={[required, number]}
               label = "From Year"/>
             </Col>
             <Col xs = {12} lg = {2} className = "d-flex justify-content-center align-items-center">
@@ -45,6 +48,7 @@ const Education = ({ fields }) => {
                 name = {`${education}.toYear`}
                 type = "number"
                 component = {Textfield}
+                validate={[required, number]}
                 label = "To Year"/>
             </Col>
           </Row>
@@ -52,12 +56,13 @@ const Education = ({ fields }) => {
             name = {`${education}.degree`}
             type = "text"
             component = {Textfield}
+            validate={[required, alphaNumeric]}
             label = "Degree"/>
         </div>
       )}
       <div className = "d-flex justify-content-center mb-2">
         <Button variant = "success" onClick = {() => fields.push({})}>
-          <i className = "fa fa-plus me-2" aria-hidden = "true"></i>
+          <i className = "fa fa-plus mr-2" aria-hidden = "true"></i>
           More
         </Button>
       </div>

@@ -7,7 +7,7 @@ import {
   Col,
   Button
 } from "react-bootstrap";
-import Form from "../components/home/Form";
+import Form from "../components/home/DetailsForm";
 import Resume from "../components/home/Resume";
 import { useDispatch, useSelector } from "react-redux";
 import { selectTheme } from "../actions/Home";

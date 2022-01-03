@@ -12,8 +12,8 @@ const Resume = (props, ref) => {
   const values = form && form.values ? form.values : {};
 
   return (
-    <Row className = {`height-100 resume ${props.theme}-theme`} ref = {ref}>
-      <Col xs = {4} className = "theme-bg pt-3 pb-3 pe-4">
+    <Row className = {`height-100 resume ${props.theme}-theme`} ref = {ref}> {/* The ref from the parent is assigned to a the DOM element here in the child */}
+      <Col xs = {4} className = "theme-bg pt-3 pb-3 pr-4">
         <h4 className = "mb-0">
           {values.firstName} {" "} {values.lastName}
         </h4>
@@ -21,7 +21,7 @@ const Resume = (props, ref) => {
           {values.designation}
         </p>
         <div className = "stripe-left theme-bg-dark p-1 mb-3">
-          <h6 className = "text-uppercase mb-0 ps-2">Profile</h6>
+          <h6 className = "text-uppercase mb-0 pl-2">Profile</h6>
         </div>
         <h6 className = "text-uppercase mb-0">Email</h6>
         <p>
@@ -36,15 +36,15 @@ const Resume = (props, ref) => {
           {values.phone}
         </p>
       </Col>
-      <Col xs = {8} className = "bg-white pt-3 pb-3 right-section pe-4">
+      <Col xs = {8} className = "bg-white pt-3 pb-3 right-section pr-4">
         <div className = "stripe-left theme-bg-dark p-1 mb-3 mt-3">
-          <h6 className = "text-uppercase mb-0 ps-2">Objective</h6>
+          <h6 className = "text-uppercase mb-0 pl-2">Objective</h6>
         </div>
         <p className = "text-dark">
           {values.objective}
         </p>
         <div className = "stripe-left theme-bg-dark p-1 mb-2 mt-3">
-          <h6 className = "text-uppercase mb-0 ps-2">Work Experience</h6>
+          <h6 className = "text-uppercase mb-0 pl-2">Work Experience</h6>
         </div>
         {values.experience ?
           values.experience.map(exp => (
@@ -61,7 +61,7 @@ const Resume = (props, ref) => {
           : null
         }
         <div className = "stripe-left theme-bg-dark p-1 mb-2 mt-3">
-          <h6 className = "text-uppercase mb-0 ps-2">Education</h6>
+          <h6 className = "text-uppercase mb-0 pl-2">Education</h6>
         </div>
         {values.education ?
           values.education.map(edu => (
@@ -78,7 +78,7 @@ const Resume = (props, ref) => {
           : null
         }
         <div className = "stripe-left theme-bg-dark p-1 mb-3 mt-3">
-          <h6 className = "text-uppercase mb-0 ps-2">Skills</h6>
+          <h6 className = "text-uppercase mb-0 pl-2">Skills</h6>
         </div>
         <div className = "d-flex flex-wrap">
           {values.skills ? values.skills.map(skill => <span className = "badge text-light theme-bg m-1">{skill.name}</span>) : null}
@@ -88,4 +88,4 @@ const Resume = (props, ref) => {
   )
 }
 
-export default React.forwardRef(Resume);
+export default React.forwardRef(Resume); // forwardRef is used to forward the ref correctly to the child component from the parent.
