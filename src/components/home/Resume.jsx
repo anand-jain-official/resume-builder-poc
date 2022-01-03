@@ -3,13 +3,18 @@ import {
   Row,
   Col
 } from "react-bootstrap";
-import { useSelector } from 'react-redux';
+import { useSelector, shallowEqual } from 'react-redux';
 
 const Resume = (props, ref) => {
 
-  const form = useSelector(store => props.preview ? null : store.form.resumeForm);
+  const form = useSelector(store => props.preview ? null : store.form.resumeForm, shallowEqual);
 
-  const values = form && form.values ? form.values : {};
+  let values = form && form.values ? form.values : {};
+
+  const savedValues = localStorage.getItem('resumeForm');
+  if(props.printPreview && savedValues) {
+    values = JSON.parse(savedValues);
+  }
 
   return (
     <Row className = {`height-100 resume ${props.theme}-theme`} ref = {ref}> {/* The ref from the parent is assigned to a the DOM element here in the child */}
@@ -49,7 +54,7 @@ const Resume = (props, ref) => {
         {values.experience ?
           values.experience.map(exp => (
             <div className = "mt-3">
-              <h6 className = "mb-1">{exp.company}</h6>
+              <h6 className = "mb-1 org-name">{exp.company}</h6>
               <div className = "d-flex justify-content-between">
                 <span>{exp.designation}</span>
                 <span>
@@ -66,7 +71,7 @@ const Resume = (props, ref) => {
         {values.education ?
           values.education.map(edu => (
             <div className = "mt-3">
-              <h6 className = "mb-1">{edu.institute}</h6>
+              <h6 className = "mb-1 org-name">{edu.institute}</h6>
               <div className = "d-flex justify-content-between">
                 <span>{edu.degree}</span>
                 <span>

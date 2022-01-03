@@ -229,6 +229,9 @@ p {
   .resume {
     max-width: unset !important;
   }
+  .org-name {
+    font-size: 1.2rem !important;
+  }
 }
 
 /* REACT COMMON STYLES END */

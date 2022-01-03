@@ -31,7 +31,7 @@ const SkillsAutocomplete = ({ input: { value, onChange } }) => {
       suggestions = {suggestions}
       onDelete = {onDelete}
       onAddition = {onAddition}
-      placeholderText = {""}
+      placeholderText = {Array.isArray(value) && value.length ? "" : "Type here to get list of suggestions (e.g. Java)..."}
       classNames = {{ root : "form-control text-field react-tags" }}
     />
   );

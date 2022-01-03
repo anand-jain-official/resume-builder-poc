@@ -8,12 +8,12 @@ import {
   Button
 } from "react-bootstrap";
 import Resume from "../components/home/Resume";
-import { useSelector } from "react-redux";
+import { useSelector, shallowEqual } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { useReactToPrint } from 'react-to-print';
 
 function PrintPreview(props) {
-  const selectedTheme = useSelector(store => store.home.theme);
+  const selectedTheme = useSelector(store => store.home.theme, shallowEqual);
   const navigate = useNavigate();
   const componentRef = useRef(); // Ref is a reference variable created to refer to a DOM element after it's assigned.
   const handlePrint = useReactToPrint({
@@ -34,7 +34,7 @@ function PrintPreview(props) {
             </Button>
           </div>
           <div className = "d-flex justify-content-center height-80vh">
-            <Resume ref = {componentRef} theme = {selectedTheme} /> {/* We are passing the ref to the child component to assign to an element inside the child */}
+            <Resume ref = {componentRef} theme = {selectedTheme} printPreview /> {/* We are passing the ref to the child component to assign to an element inside the child */}
           </div>
         </Col>
       </Row>

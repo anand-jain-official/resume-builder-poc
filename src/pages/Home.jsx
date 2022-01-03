@@ -9,11 +9,11 @@ import {
 } from "react-bootstrap";
 import Form from "../components/home/DetailsForm";
 import Resume from "../components/home/Resume";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch, useSelector, shallowEqual } from "react-redux";
 import { selectTheme } from "../actions/Home";
 
 function Home(props) {
-  const selectedTheme = useSelector(store => store.home.theme);
+  const selectedTheme = useSelector(store => store.home.theme, shallowEqual);
   const dispatch = useDispatch();
   const themes = ["green", "red", "yellow", "blue"];
   const selectThemeHandler = theme => {

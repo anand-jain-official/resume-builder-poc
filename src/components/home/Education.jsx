@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { Row, Col, Button } from 'react-bootstrap';
 import { Field } from 'redux-form';
 import Textfield from '../common/Textfield';
-import { alphaNumeric, number, required } from './DetailsForm';
+import { alphaNumeric, number, required, validYear } from './DetailsForm';
 
 const Education = ({ fields }) => {
   useEffect(() => {
@@ -30,14 +30,16 @@ const Education = ({ fields }) => {
             type = "text"
             component = {Textfield}
             validate={[required, alphaNumeric]}
+            placeholder = "e.g. ABC College etc"
             label = "Institute"/>
           <Row>
             <Col xs = {12} lg = {5}>
               <Field
               name = {`${education}.fromYear`}
-              type = "number"
+              type = "text"
               component = {Textfield}
-              validate={[required, number]}
+              validate={[required, validYear]}
+              placeholder = "e.g. 2018"
               label = "From Year"/>
             </Col>
             <Col xs = {12} lg = {2} className = "d-flex justify-content-center align-items-center">
@@ -46,9 +48,10 @@ const Education = ({ fields }) => {
             <Col xs = {12} lg = {5}>
               <Field
                 name = {`${education}.toYear`}
-                type = "number"
+                type = "text"
                 component = {Textfield}
-                validate={[required, number]}
+                validate={[required, validYear]}
+                placeholder = "e.g. 2020"
                 label = "To Year"/>
             </Col>
           </Row>
@@ -57,6 +60,7 @@ const Education = ({ fields }) => {
             type = "text"
             component = {Textfield}
             validate={[required, alphaNumeric]}
+            placeholder = "e.g. Bachelor of Technology"
             label = "Degree"/>
         </div>
       )}

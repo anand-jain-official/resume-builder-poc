@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Field, reduxForm, FieldArray } from 'redux-form';
 import {
   Row,
@@ -11,9 +11,11 @@ import Education from './Education';
 import Experience from './Experience';
 import Skills from './Skills';
 import { useNavigate } from 'react-router-dom';
+import { useSelector, shallowEqual } from 'react-redux';
 
 export const required = value => (value ? undefined : 'Required');
 export const number = value => value && isNaN(Number(value)) ? 'Must be a number' : undefined;
+export const validYear = value => value && (isNaN(Number(value)) || !(Number(value) >= 1900 && Number(value) <= new Date().getFullYear())) ? 'Invalid Year' : undefined;
 const email = value =>
   value && !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(value)
     ? 'Invalid email address'
@@ -34,9 +36,26 @@ const alphaOnly = value =>
 const SimpleForm = props => {
   const { handleSubmit, reset } = props;
   const navigate = useNavigate();
-  const onSubmit = () => {
+
+  useEffect(() => {
+    const jsonInitialValues = localStorage.getItem("resumeForm");
+    if(jsonInitialValues) {
+      const initialValues = JSON.parse(jsonInitialValues);
+      props.initialize(initialValues);
+    }
+  }, []);
+
+  const onSubmit = (values) => {
+    localStorage.setItem('resumeForm', JSON.stringify(values));
     navigate('/print-preview');
   }
+
+  const onReset = e => {
+    localStorage.removeItem('resumeForm');
+    props.initialize({});
+    reset(e);
+  }
+
   return (
     <Form onSubmit = {handleSubmit(onSubmit)}>
       <Row>
@@ -116,7 +135,7 @@ const SimpleForm = props => {
             as = "textarea"
             component = {Textfield}
             type = "text"
-            placeholder = ""
+            placeholder = "Your mission statemet..."
             label = "Objective"
             validate={[required]}
           />
@@ -145,7 +164,7 @@ const SimpleForm = props => {
       </Row>
       <Row>
         <Col xs = {12} className = "text-right p-3">
-          <Button variant = "danger" onClick = {reset} className = "mt-2">
+          <Button variant = "danger" onClick = {onReset} className = "mt-2">
             <i className = "fa fa-times mr-2" aria-hidden = "true"></i>
             Reset
           </Button>
@@ -159,7 +178,36 @@ const SimpleForm = props => {
   )
 }
 
+const validate = values => {
+  const errors = {}
+  const educationArrayErrors = []
+  values.education && values.education.forEach((education, educationIndex) => {
+    const educationErrors = {}
+    if (education.fromYear && education.toYear && education.toYear < education.fromYear) {
+      educationErrors.toYear = 'To Year cannot be less than From Year';
+      educationArrayErrors[educationIndex] = educationErrors;
+    }
+  })
+  if (educationArrayErrors.length) {
+    errors.education = educationArrayErrors;
+  }
+  const experienceArrayErrors = []
+  values.experience && values.experience.forEach((experience, experienceIndex) => {
+    const experienceErrors = {}
+    if (experience.fromYear && experience.toYear && experience.toYear < experience.fromYear) {
+      experienceErrors.toYear = 'To Year cannot be less than From Year'
+      experienceArrayErrors[experienceIndex] = experienceErrors;
+    }
+  })
+  if (experienceArrayErrors.length) {
+    errors.experience = experienceArrayErrors;
+  }
+  return errors;
+}
+
+
 export default reduxForm({
   form: 'resumeForm',
-  destroyOnUnmount: false
+  destroyOnUnmount: false,
+  validate
 })(SimpleForm);
