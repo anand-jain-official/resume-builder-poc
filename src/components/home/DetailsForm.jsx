@@ -144,7 +144,7 @@ const SimpleForm = props => {
         </Col>
       </Row>
       <Row>
-        <Col xs = {12} className = "text-end p-3">
+        <Col xs = {12} className = "text-right p-3">
           <Button variant = "danger" onClick = {reset} className = "mt-2">
             <i className = "fa fa-times mr-2" aria-hidden = "true"></i>
             Reset
