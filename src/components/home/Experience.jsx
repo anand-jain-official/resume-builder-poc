@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { Row, Col, Button } from 'react-bootstrap';
 import { Field } from 'redux-form';
 import Textfield from '../common/Textfield';
-import { alphaNumeric, number, required, validYear } from './DetailsForm';
+import { alphaNumeric, required, validYear } from './DetailsForm';
 
 const Experience = ({ fields }) => {
   useEffect(() => {

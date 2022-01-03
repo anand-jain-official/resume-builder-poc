@@ -52,8 +52,8 @@ const Resume = (props, ref) => {
           <h6 className = "text-uppercase mb-0 pl-2">Work Experience</h6>
         </div>
         {values.experience ?
-          values.experience.map(exp => (
-            <div className = "mt-3">
+          values.experience.map((exp, i) => (
+            <div className = "mt-3" key = {exp.company + i}>
               <h6 className = "mb-1 org-name">{exp.company}</h6>
               <div className = "d-flex justify-content-between">
                 <span>{exp.designation}</span>
@@ -69,8 +69,8 @@ const Resume = (props, ref) => {
           <h6 className = "text-uppercase mb-0 pl-2">Education</h6>
         </div>
         {values.education ?
-          values.education.map(edu => (
-            <div className = "mt-3">
+          values.education.map((edu, i) => (
+            <div className = "mt-3" key = {edu.institute + i}>
               <h6 className = "mb-1 org-name">{edu.institute}</h6>
               <div className = "d-flex justify-content-between">
                 <span>{edu.degree}</span>
@@ -86,7 +86,7 @@ const Resume = (props, ref) => {
           <h6 className = "text-uppercase mb-0 pl-2">Skills</h6>
         </div>
         <div className = "d-flex flex-wrap">
-          {values.skills ? values.skills.map(skill => <span className = "badge text-light theme-bg m-1">{skill.name}</span>) : null}
+          {values.skills ? values.skills.map(skill => <span key = {skill.name} className = "badge text-light theme-bg m-1">{skill.name}</span>) : null}
         </div>
       </Col>
     </Row>

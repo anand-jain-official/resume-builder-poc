@@ -135,7 +135,7 @@ const SimpleForm = props => {
             as = "textarea"
             component = {Textfield}
             type = "text"
-            placeholder = "Your mission statemet..."
+            placeholder = "Your mission statement..."
             label = "Objective"
             validate={[required]}
           />
